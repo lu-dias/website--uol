@@ -1,5 +1,20 @@
 /*Custom Fonts-------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Anton');
+/* Web Site Title */
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap'); 
+/* Aside Title */
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700');
+/* Aside description */
+@import url('https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald');
+
+/*Animations-------------------------------------*/
+@keyframes logo-anima {
+  0%   {left:800px; top:0px;}
+  25%  {left:600px; top:0px;}
+  50%  {left:400px; top:0px;}
+  75%  {left:200px; top:0px;}
+  100% {left:0px; top:0px;}
+}
 
 /*Common CSS-------------------------------------*/
 * {
@@ -7,30 +22,48 @@
 }
 
 body {
-    background-color: black;
+    height:100%;
+    font-family: Avenir,Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+    font-size: 1rem;
 }
 
+h1 {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 1.5em; 
+	font-family:  space age round, Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 4em;
+}
 
 h2 {
-    position: relative;
 	text-align: center;
-	padding-left: 2em;
-	font-family:  'Anton', Arial, Helvetica, sans-serif;
+	font-family:  'Anton', Helvetica, Arial, sans-serif;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
 	font-size: 2.5em;
-	color: white;
+	color: black;
 }
 
 h3 {
-		text-align: center; 
-		font-family: Norwester,Open Sans,Arial,sans-serif;
-		font-style: normal;
-		font-variant: normal;
-		font-weight: bold;
-		font-size: 1.5em;
-		color: white;
+    text-align: center; 
+	font-family: 'Norwester', Open Sans, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: black;
+}
+
+.center {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 p {	
@@ -40,55 +73,30 @@ p {
     font-variant: normal;
     font-weight: normal;
     font-size: 1em;
+}
+/*Footer CSS-------------------------------------------*/
+footer {
+    grid-area: footer;
+	clear: both;
+	margin-bottom: 0;
+	background-color: black;
+	text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 1em;
     color: white;
-}
-
-/*Header CSS---------------------------------------*/
-header {
-/*    width: 100%;
-    border: 2px solid darkolivegreen;
-    padding: 0px;
-    margin: 4px;
-    margin-top: 38px; */
-	animation-name: example;
-   animation-duration: 4s;
-}
-
-header img {
-/*	border: 2px;
-    padding: 0px;
-    padding-top: 12px;
-    margin: 4px;
-	float: left;*/
-}
-
-header h1 {
-/*    border: 2px;
-    padding: 0px;
-    margin: 4px;
-    padding-left: 1.5em; 
-	font-family:  'Anton', Arial, Helvetica, sans-serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	font-size: 4em;
-	color: white;*/
-}
-
-@keyframes example {
-  0%   {background-color:red; left:0px; top:0px;}
-  25%  {background-color:yellow; left:200px; top:0px;}
-  50%  {background-color:blue; left:200px; top:200px;}
-  75%  {background-color:green; left:0px; top:200px;}
-  100% {background-color:red; left:0px; top:0px;}
 }
 
 /*Nav CSS-------------------------------------------*/
 nav {
+    grid-area:nav;
     width: 100%;
     border: 0px;
     padding: 0px;
     margin: 4px;
+    z-index: 1;
 }
 
 nav ul {
@@ -99,121 +107,234 @@ nav ul {
 	position: fixed;
 	top: 0;
 	width: 100%;
+    background-color: black;
+    z-index: 1;
 }
 
 nav li {
 	float: left;
 	border-right: 1px solid white;
+    z-index: 1;
 }
 
 nav li a {
     display: block;
-	 color: white;
-	 text-align: center;
-	 padding: 12px 14px;
-	 text-decoration: none;
-	 font-family: Norwester,Open Sans,Arial,sans-serif;
-	 font-size: 0.75em;
-	 font-weight: 400;
-	 background-color: black;
+	color: #EEFFFA;
+	text-align: center;
+	padding: 12px 14px;
+	font-family: Norwester,Open Sans,Arial,sans-serif;
+    text-shadow: 0px 0px 30px #555;
+    text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 400;
+	background-color: black;
+    z-index: 1;
 }
 
 nav li a:hover {
 	background-color: darkolivegreen;
+    z-index: 1;
 }
 
 .active {
 	background-color: #4CAF50;
+    z-index: 1;
 }
 
-/*Main CSS-------------------------------------------*/
+/*Header CSS---------------------------------------*/
+header {
+    grid-area: header;
+    width: 100%;
+    border: 2px solid darkolivegreen;
+    padding: 0px;
+    margin: 4px;
+    margin-top: 30px; 
+    position: relative;
+    background-color: black;
+}
+
+.logo-anima {
+    animation-name: logo-anima;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: normal; 
+}
+
+header img {
+    float:left;
+	border: 2px;
+    padding: 0px;
+    padding-top: 16px;
+    margin: 4px;
+	float: left;
+    height: 5%;
+    width: 5%;
+}
+
+header h1 {
+    float: inherit;
+    display: inline-block;
+    border: 2px;
+    padding: 0px;
+    margin: 4px;
+    padding-left: 1.5em; 
+	font-family:  'Orbitron', sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 3rem;
+    color: #EEFFFA;
+    text-shadow: 0px 0px 30px #555;
+}
+
+/*MAIN CSS---------------------------------------*/
 main {
-		background-color: black;
-		overflow: hidden;
-		float: left;
-		width: 75%;
+    grid-area: main;
+    border: 2px;
+    padding: 0px;
+    margin: 4px;
+    justify-content: center;
 }
 
+/*ASIDE CSS---------------------------------------*/
 aside {
-		float: right;
-		width: 20%;
-		background-color: black;
-		border-style: solid;
-		border-color: green;
+    grid-area:aside;
+    border-style: solid;
+    border: 2px solid darkolivegreen;
+    background-color: #484d5c;
 }
 
 aside .offerTitle {
 	text-align: center;
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
+    font-family: 'Crimson Text', serif;
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
-    font-size: 1.75em;
-    color: white;
+    font-size: 1.25rem;
+    color: #ffce00;
 }
 
 aside .offerDescription {
 	text-align: center;
-    font-family: Norwester,Open Sans,Arial,sans-serif;
+    font-family: 'Cardo', serif;
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
-    font-size: 1em;
-    color: white;
+    font-size: 0.75rem;
+    color: #c0ccd4;
 }
 
 aside img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 60%;
 }
 
-/*Attractions CSS-------------------------------------------*/
-article {
+/*Index CSS---------------------------------------*/
+.grid-container-index {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+        'nav nav nav'
+        'header header header'
+        'main main aside'
+        'footer footer footer';
+    background-color:white;
 }
 
-article .attractionTitle {
+/*Attractions---------------------------------------*/
+.grid-container-attractions {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+        'nav nav nav'
+        'header header header'
+        'main main main'
+        'footer footer footer';
+    background-color:white;
+}
+
+.attraction-content {
+    display:grid;
+    grid-template-columns: auto auto;
+    padding:10px
+}
+
+.grid-item {
+    width: 100%;
+    border: 2px solid darkolivegreen;
+    padding: 0px;
+    margin: 4px;
+    margin-top: 30px; 
+    position: relative;
+    background-color: white;
+    display: inline-grid;
+    justify-items: center;
+}
+
+.attractionTitle {
 	text-align: center;
     font-family: 'Anton', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
-    font-size: 1.75em;
-    color: white;	
+    font-size: 2em;
 }
 
-article .attractionDescription {
+.attractionDescription {
 	text-align: center;
-    font-family: Norwester,Open Sans,Arial,sans-serif;
+    font-family: Norwester, Open Sans,Arial, sans-serif;
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
-    font-size: 1em;
-    color: white;
+    font-size: 1.5em;
 }
 
-article img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-
+/*Contact Us---------------------------------------*/
+/* Add a background color and some padding around the form */
+.grid-container-contactus {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+        'nav nav nav'
+        'header header header'
+        'container container container'
+        'footer footer footer';
+    background-color:white;
 }
-
-/*Contact Us CSS-------------------------------------------*/
 .container form {
-		 font-family: Norwester,Open Sans,Arial,sans-serif;
-		font-style: normal;
-		font-variant: normal;
-		font-weight: normal;
-		font-size: 0.75em;
-		color: black;
+    font-family: Norwester,Open Sans,Arial,sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 0.75em;
+	color: black;
+}
+
+.container {
+    grid-area: container;
+    border-radius: 5px;
+    background-color: #6A8A82;
+    padding: 20px;
+}
+
+.container h2 {
+	position: relative;
+	text-align: center;
+	padding-left: 2em;
+	font-family:  'Anton', Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 2.5em;
+	color: black;	
 }
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], textarea {
   width: 100%; /* Full width */
-  padding: 12px; /* Some padding */ 
+  padding: 12px; /* Some padding */
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -235,37 +356,4 @@ input[type=submit] {
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   background-color: #45a049;
-}
-
-/* Add a background color and some padding around the form */
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.container h2 {
-	position: relative;
-	text-align: center;
-	padding-left: 2em;
-	font-family:  'Anton', Arial, Helvetica, sans-serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	font-size: 2.5em;
-	color: black;	
-}
-
-/*Footer CSS-------------------------------------------*/
-footer {
-	clear: both;
-	margin-bottom: 0;
-	background-color: black;
-	text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    font-size: 1em;
-    color: white;
 }
