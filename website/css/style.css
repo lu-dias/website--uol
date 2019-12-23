@@ -344,22 +344,23 @@ aside img {
         'header header header'
         'container container container'
         'footer footer footer';
-    background-color:white;
+    background-color: darkolivegreen;
 }
 .container form {
     font-family: Norwester,Open Sans,Arial,sans-serif;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: normal;
-	font-size: 0.75em;
-	color: black;
+	font-weight: bold;
+	font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto;
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
 
 .container {
     grid-area: container;
-    border-radius: 5px;
-    background-color: #6A8A82;
-    padding: 20px;
+    padding: 20px 20px 40px;
 }
 
 .container h2 {
@@ -371,14 +372,13 @@ aside img {
 	font-variant: normal;
 	font-weight: normal;
 	font-size: 2.5em;
-	color: black;	
 }
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], textarea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */
-  border: 1px solid #ccc; /* Gray border */
+  border: 2px outset #999; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
@@ -390,6 +390,10 @@ input[type=text], textarea {
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: 2px 2px 2px black;
+  font-size: 0.9rem;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
