@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- This head section contains all the invisible information about the page -->
+
+<head>
+    <title>Alternative World</title>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="The Alternative World Theme Park helps people experience how is the global warming  affecting the future of our world">
+    <meta name="keywords"
+        content="Theme Park, thrilling, global warming, rolller coaster, virtual reality, amusement park, indoor, Alternative World">
+    <meta name="author" content="Marco Orsini">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="refresh" content="10">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.5/math.min.js"></script>
+    <meta name="robots" content="noindex,nofollow">
+    <!--Block the search engine discovery/crawling until the web site is complete-->
+</head>
+
+<!-- This body section contains the structure for all the visble content -->
+
+<body>
+
+    <div class="grid-container-index">
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+        </nav>
+
+        <!-- The main content of this page is a quiz to find out your perfect world -->
+        <main>
+            <article>
+                <div class="image-wrapper" id="content-wrapper">
+                    <div class="image-overlay">
+                        <h1>Find out which of our Alternative Worlds is perfect for you!</h1>
+                        <div class="quiz-wrapper">
+                            <div id="quiz"></div>
+                        </div>
+                        <div class="button-wrapper">
+                            <button id="previous">Previous Question</button>
+                            <button id="next">Next Question</button>
+                            <button id="submit">Submit Quiz</button>
+                        </div>
+                    </div>
+                    <img src="./img/city.png" alt="City" />
+                </div>
+            </article>
+        </main>
+
+        <!-- General information provided in the Footer of the page -->
+        <footer>
+            No Copyright 2019 - Alternative World an idea from UoL
+            <br>
+            All the pictures are credited to <a href="https://www.pexels.com/"> Pexels</a>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const questions = [
+                {
+                    question: "What is your favorite hobby?",
+                    answers: {
+                        a: { text: "Reding a book", value: 2 },
+                        b: { text: "Playing with clay", value: 1 },
+                        c: { text: "Watching an action movie", value: 3 },
+                        d: { text: "Camping", value: 0 },
+                        e: { text: "Going to the theater", value: 4 }
+                    }
+                },
+                {
+                    question: "What's your favorite movie?",
+                    answers: {
+                        a: { text: "Movie? I'm too cult for that", value: 4 },
+                        b: { text: "Ready Player One", value: 0 },
+                        c: { text: "An inconvenient truth", value: 3 },
+                        d: { text: "Despicable Me", value: 1 },
+                        e: { text: "Julie & Julia", value: 2 }
+                    }
+                },
+                {
+                    question: "Where do you see yourself in 5 years?",
+                    answers: {
+                        a: { text: "Middle school", value: 1 },
+                        b: { text: "Broadway", value: 4 },
+                        c: { text: "Strapped to a helicopter with a greenpeace shirt", value: 3 },
+                        d: { text: "At the appocalipse, of course", value: 0 },
+                        e: { text: "At the beach, sipping margaritas", value: 2 }
+                    }
+                },
+                {
+                    question: "What kind of car do you drive?",
+                    answers: {
+                        a: { text: "A Prius", value: 3 },
+                        b: { text: "Do remote controlled cars count?", value: 1 },
+                        c: { text: "A Tesla", value: 0 },
+                        d: { text: "My driver drives a Bentley", value: 4 },
+                        e: { text: "Whatever dude, an uber is fine", value: 2 }
+                    }
+                },
+                {
+                    question: "What is your favorite food?",
+                    answers: {
+                        a: { text: "Soylent", value: 0 },
+                        b: { text: "Heirloom Porterhouse with sauteéd mushrooms and truffle foam", value: 4 },
+                        c: { text: "Anything vegan", value: 3 },
+                        d: { text: "Yes!", value: 2 },
+                        e: { text: "Tater tots", value: 1 }
+                    }
+                }
+            ];
+
+            function buildQuiz() {
+                const output = [];
+
+                questions.map((question, questionNum) => {
+                    const answers = [];
+
+                    for (option in question.answers) {
+                        answers.push(
+                            `<label>
+                        <input type="radio" name="question${questionNum}" value="${question.answers[option].value}">
+                        ${option} :
+                        ${question.answers[option].text}
+                    </label>`
+                        );
+                    }
+
+                    output.push(
+                        `<div class="slide">
+                        <div class="question"> ${question.question} </div>
+                        <div class="answers"> ${answers.join("")} </div>
+                    </div>`
+                    );
+                });
+
+                quizWrapper.innerHTML = output.join("");
+            }
+
+            function showResult() {
+                const results = [`<div class="image-overlay">
+                                    <h1>Your perfect world is...</h1>                    
+                                    <h2 class="attractionTitle">Future Vision</h2>
+                                        <p class="attractionDescription">A virtual reality that immerge in<br>several different alternative future of our World.</p>
+                                    </div>
+                                    <img src="img/vr-goggles.jpg" alt="Future in Virtual Reality"/>`,
+
+                    `<div class="image-overlay">
+                                        <h1>Your perfect world is...</h1>
+                                        <h2 class="attractionTitle">The Soft World</h2>
+                                        <p class="attractionDescription">Children are free to jump, run, <br>and play all the time they want.</p>
+                                    </div>
+                                    <img src="img/soft.jpg" alt="Area for children"/>`,
+
+                    `<div class="image-overlay">
+                                        <h1>Your perfect world is...</h1>
+                                        <h2 class="attractionTitle">The Plaza</h2>
+                                        <p class="attractionDescription"> The place where to chill out, eat food and relax.</p>
+                                    </div>
+                                    <img src="img/theplaza.jpg" alt="Relax and Restaurants"/>`,
+
+                    `<div class="image-overlay">
+                                        <h1>Your perfect world is...</h1>
+                                        <h2 class="attractionTitle">The Flying Machine</h2>
+                                        <p class="attractionDescription">Augmented Reality that flyies you <br> over a World affected by the global warming.</p>
+                                    </div>
+                                    <img src="img/world.jpg" alt="Flight Simulator"/>`,
+
+                    `<div class="image-overlay">
+                                        <h1>Your perfect world is...</h1>
+                                        <h2 class="attractionTitle">The Theatre of the Future</h2>
+                                        <p class="attractionDescription">Augmented Reality a living scene and real actors <br> to immerge you into an alternative world.</p>
+                                    </div>
+                                    <img src="img/masks.jpg" alt="Hologram and Theatre"/>`]
+
+                const wrapper = document.getElementById("content-wrapper");
+                wrapper.innerHTML = results[getResult()]
+            }
+
+            function getResult() {
+                const selectedAnswers = quizWrapper.querySelectorAll(".answers");
+
+                let answer = [];
+
+                questions.map((question, questionNum) => {
+                    const selectedAnswer = selectedAnswers[questionNum];
+                    const selector = `input[name=question${questionNum}]:checked`;
+                    answer.push(parseInt((selectedAnswer.querySelector(selector) || {}).value));
+                });
+
+                return math.mode(answer)[0]
+            }
+
+            function showQuestion(n) {
+                slides[activeQuestion].classList.remove("active-slide");
+                slides[n].classList.add("active-slide");
+                activeQuestion = n;
+
+                if (activeQuestion === 0) {
+                    previousBtn.style.display = "none";
+                } else {
+                    previousBtn.style.display = "inline-block";
+                }
+
+                if (activeQuestion === slides.length - 1) {
+                    submitBtn.style.display = "inline-block";
+                    nextBtn.style.display = "none";
+                } else {
+                    submitBtn.style.display = "none";
+                    nextBtn.style.display = "inline-block";
+                }
+            }
+
+            function showNext() {
+                showQuestion(activeQuestion + 1);
+            }
+
+            function showPrevious() {
+                showQuestion(activeQuestion - 1);
+            }
+
+            const quizWrapper = document.getElementById("quiz");
+            const submitBtn = document.getElementById("submit");
+            submitBtn.addEventListener("click", showResult);
+
+            buildQuiz();
+
+            const previousBtn = document.getElementById("previous");
+            previousBtn.addEventListener("click", showPrevious);
+            const nextBtn = document.getElementById("next");
+            nextBtn.addEventListener("click", showNext);
+            const slides = document.querySelectorAll(".slide");
+            let activeQuestion = 0;
+
+            showQuestion(0);
+
+        })();
+    </script>
+</body>
+
+</html>
