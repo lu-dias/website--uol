@@ -11,12 +11,17 @@
 	<meta name="author" content="Marco Orsini">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="refresh" content="10">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="StyleSheet/style.css">
 	<meta name="robots" content="noindex,nofollow"> <!--Block the search engine discovery/crawling until the web site is complete-->
 </head>
 
 <!-- This body section contains the structure for all the visble content -->
 <body>
+<!-- The video -->
+<!--<video autoplay muted loop id="backgroundVideo">
+  <source src="./media/2757709.mp4" type="video/mp4">
+</video>
+-->
 
     <div class="grid-container-index">
         <!-- Navigation Bar -->    
@@ -24,8 +29,9 @@
             <ul>
                 <li><a class="active" href="#">Home</a></li>
 		        <li><a href="attractions.html">Attractions</a></li>
-				<li><a href="contactus.html">Contact Us</a></li>
-				<li><a href="quiz.html">Quiz</a></li>
+				    <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+		        <li><a href="contactus.html">Contact Us</a></li>
 	        </ul>
         </nav>
 
@@ -38,37 +44,26 @@
 
         <!-- The main content of this page is an introduction of Theme Park -->
         <main>
+            <h2>Welcome to the Alternative World!</h2>
 	        <article>
-				<div class="video-wrapper">
-					<div class="video-overlay">
-						<h1>Welcome to the Alternative World!</h1>
-						<p>The virtual portal that takes you into an evolving world </p> 
-					</div>
-					<video autoplay muted loop id="introduction-video">
-						<source src="./media/city.mp4" type="video/mp4"/>
-					</video>
-				</div>
-				<div class="image-wrapper">
-					<div class="image-overlay">
-						<h2>There is no Planet B</h2>
-						<p>It is now time to experience what will happen if we don't act now!</p>
-					</div>
-					<img src="./img/waste.jpg" alt="Global Warming and poluttion"/>
-				</div>
-				<p>Here at Alternative World you and your family can experience the future thanks to advanced technologies such as <strong>virtual reality</strong>, <strong>augmented reality</strong> and <strong>hologram</strong>.</p>
-				<div class="flex-tiles">
-					<img src="img/virtual-reality.jpg" alt="Virtual Reality">
-					<img src="img/art-blur.jpg"  alt="Hologram">
-					<img src="img/augmented-reality-2.jpg" alt="Augmented Reality">
-				</div>
+                <h3>The virtual portal that takes you into an evolving world </h3>  
+		        <img src="img/VR_people.jpg" alt="Virtual Reality" class="center">
+                <p>It is now time to experience what will happen if we don't act now!</p>
+		        <img src="img/big-waves.jpg" alt="What will happen?" class="center">
+		        <p>Here at Alternative World you and your family can experience the future thanks to advanced technologies such as virtual reality, augmented reality and hologram </p>
+		        <img src="img/virtualReality.jpg" alt="Virtual Reality" style="width:25%;">
+		        <img src="img/augmented-reality.png" alt="Augmented Reality" style="width:30% ;">
+		        <img src="img/hologram-show.jpg"  alt="Hologram" style="width:43%;">
             </article>
         </main>
 
         <!-- Aside to advertise offers -->
         <aside>
+           <a href="tickets.html">
 	       <div class="offerTitle"> Kids Offer!</div>
 	       <img src="img/kids.jpg" alt="For Kids!"/>
-	       <div class="offerDescription">Kids con join for free in December</div>
+	       <div class="offerDescription">Kids can join for free in December</div>
+           <a href="tickets.html">
 
 	       <div class="offerTitle"> Live Theatre Offer!</div>
 	       <img src="img/onefortwo.jpg" alt="One For Two!"/>
